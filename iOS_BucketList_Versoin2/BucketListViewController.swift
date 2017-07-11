@@ -53,7 +53,8 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
     }
     
     func itemSaved(by controller: AddItemTableViewController) {
-        
+        print("You hit the save button")
+        dismiss(animated: true, completion: nil)
     }
 }
 
