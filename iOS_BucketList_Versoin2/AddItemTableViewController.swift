@@ -10,7 +10,7 @@ import UIKit
 
 class AddItemTableViewController: UITableViewController {
     
-    weak var delegate: CancelButtonDelegate?
+    weak var delegate: AddItemTableViewControllerDelegate?
 
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         delegate?.cancelButtonPressed(by: self)
