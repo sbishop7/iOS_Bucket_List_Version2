@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BucketListViewController: UITableViewController {
+class BucketListViewController: UITableViewController, CancelButtonDelegate {
     
     var items = ["Finish Coding Dojo", "Design a killer iOS app", "Visit Grand Tetons", "Catchup on sleep"]
 
@@ -37,6 +37,17 @@ class BucketListViewController: UITableViewController {
         return cell
         
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navigationController = segue.destination as! UINavigationController
+        
+        let addItemTableController = navigationController.topViewController as! AddItemTableViewController
+        
+        addItemTableController.delegate = self
+    }
+    
+    func cancelButtonPressed(by controller: UIViewController) {
+        print("You have hit the cancel button")
+    }
 }
 

@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="1404" y="123.68815592203899"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Add Item Table View Controller-->
         <scene sceneID="jmu-Tl-OLE">
             <objects>
-                <tableViewController id="07k-Kp-ehr" sceneMemberID="viewController">
+                <tableViewController id="07k-Kp-ehr" customClass="AddItemTableViewController" customModule="iOS_BucketList_Versoin2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="MsO-a8-3JR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iH7-zZ-R7U" id="NpV-wz-IjF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="61.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eGG-19-SKw">
@@ -91,7 +91,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="n85-gk-Rxh">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="SW6-a0-2Bi"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="SW6-a0-2Bi">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="07k-Kp-ehr" id="bbT-eI-6r0"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="BfF-GK-Pth"/>
                     </navigationItem>
                 </tableViewController>
