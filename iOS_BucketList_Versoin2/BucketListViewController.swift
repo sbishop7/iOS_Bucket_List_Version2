@@ -52,8 +52,11 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
         
     }
     
-    func itemSaved(by controller: AddItemTableViewController) {
-        print("You hit the save button")
+    func itemSaved(by controller: AddItemTableViewController, with text: String) {
+        print("recieved: \(text)")
+        items.append(text)
+        tableView.reloadData()
+        
         dismiss(animated: true, completion: nil)
     }
 }

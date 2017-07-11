@@ -20,7 +20,8 @@ class AddItemTableViewController: UITableViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        delegate?.itemSaved(by: self)
+        let text = itemTextField.text!
+        delegate?.itemSaved(by: self, with: text)
     }
     
     override func viewDidLoad() {
