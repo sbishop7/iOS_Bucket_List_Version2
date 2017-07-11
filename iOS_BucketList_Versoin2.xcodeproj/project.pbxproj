@@ -96,7 +96,6 @@
 				TargetAttributes = {
 					543AB9921F157790001F38B5 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = NT777CYM8D;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -263,7 +262,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NT777CYM8D;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iOS_BucketList_Versoin2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sethrollsout.iOS-BucketList-Versoin2";
@@ -276,7 +275,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NT777CYM8D;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iOS_BucketList_Versoin2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sethrollsout.iOS-BucketList-Versoin2";
