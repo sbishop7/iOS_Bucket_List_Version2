@@ -41,13 +41,15 @@ class BucketListViewController: UITableViewController, CancelButtonDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navigationController = segue.destination as! UINavigationController
         
-        let addItemTableController = navigationController.topViewController as! AddItemTableViewController
+        let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
         
-        addItemTableController.delegate = self
+        addItemTableViewController.delegate = self
     }
     
     func cancelButtonPressed(by controller: UIViewController) {
         print("You have hit the cancel button")
+        dismiss(animated: true, completion: nil)
+        
     }
 }
 
