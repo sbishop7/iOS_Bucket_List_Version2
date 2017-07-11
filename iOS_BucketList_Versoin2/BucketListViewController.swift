@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BucketListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Loaded")
         // Do any additional setup after loading the view, typically from a nib.
     }
 
