@@ -11,6 +11,7 @@ import UIKit
 class AddItemTableViewController: UITableViewController {
     
     weak var delegate: AddItemTableViewControllerDelegate?
+    var item: String?
 
     @IBOutlet weak var itemTextField: UITextField!
     
@@ -26,8 +27,10 @@ class AddItemTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        itemTextField.text = item
 
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

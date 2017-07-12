@@ -38,12 +38,27 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
         
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "editItemSegue", sender: indexPath)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let navigationController = segue.destination as! UINavigationController
         
-        let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
-        
-        addItemTableViewController.delegate = self
+        if segue.identifier == "addItemSegue" {
+            let navigationController = segue.destination as! UINavigationController
+            let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
+            addItemTableViewController.delegate = self
+            
+        } else if segue.identifier == "editItemSsegue" {
+            let navigationController = segue.destination as! UINavigationController
+            let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
+            addItemTableViewController.delegate = self
+            
+            let indexPath = sender as! NSIndexPath
+            let item = items[indexPath.row]
+            addItemTableViewController.item = item
+            
+        }
     }
     
     func cancelButtonPressed(by controller: AddItemTableViewController) {
