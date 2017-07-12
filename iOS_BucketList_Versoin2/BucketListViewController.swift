@@ -29,38 +29,38 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListItemCell", for: indexPath)
-        
         cell.textLabel?.text = items[indexPath.row]
-        
         return cell
         
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print ("Selected")
-    }
     
+    //edit feature...
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         performSegue(withIdentifier: "editItemSegue", sender: indexPath)
     }
     
+    //delete feature...
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         items.remove(at: indexPath.row)
         tableView.reloadData()
         
     }
     
+    //add button
+    @IBAction func AddButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "editItemSegue", sender: nil)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "addItemSegue" {
+        if (sender == nil) {
             let navigationController = segue.destination as! UINavigationController
             let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
             addItemTableViewController.delegate = self
             
-        } else if segue.identifier == "editItemSegue" {
+        } else  {
             print ("In edit mode")
             let navigationController = segue.destination as! UINavigationController
             let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController

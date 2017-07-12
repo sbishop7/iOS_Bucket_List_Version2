@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" id="nVa-4m-HSZ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sQo-4Z-oUa">
                             <connections>
-                                <segue destination="chn-kC-sCQ" kind="presentation" identifier="addItemSegue" id="TSl-fy-Vfw"/>
+                                <action selector="AddButtonPressed:" destination="ikz-Ki-K8w" id="B8Q-hU-Vre"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -150,7 +150,4 @@
             <point key="canvasLocation" x="2394.4000000000001" y="148.87556221889056"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="TSl-fy-Vfw"/>
-    </inferredMetricsTieBreakers>
 </document>
