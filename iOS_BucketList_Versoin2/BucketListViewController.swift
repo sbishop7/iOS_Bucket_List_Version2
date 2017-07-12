@@ -49,7 +49,8 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
             let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
             addItemTableViewController.delegate = self
             
-        } else if segue.identifier == "editItemSsegue" {
+        } else if segue.identifier == "editItemSegue" {
+            print ("In edit mode")
             let navigationController = segue.destination as! UINavigationController
             let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
             addItemTableViewController.delegate = self
@@ -57,6 +58,7 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
             let indexPath = sender as! NSIndexPath
             let item = items[indexPath.row]
             addItemTableViewController.item = item
+            addItemTableViewController.indexPath = indexPath
             
         }
     }
@@ -67,9 +69,20 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
         
     }
     
-    func itemSaved(by controller: AddItemTableViewController, with text: String) {
-        print("recieved: \(text)")
-        items.append(text)
+    func itemSaved(by controller: AddItemTableViewController, with text: String, at indexPath: NSIndexPath?) {
+        
+        if let ip = indexPath {
+            print ("updating existing")
+            
+            items[ip.row] = text
+            
+        }
+        else {
+            print ("adding new one")
+        
+            items.append(text)
+            
+        }
         tableView.reloadData()
         
         dismiss(animated: true, completion: nil)
